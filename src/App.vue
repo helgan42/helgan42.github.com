@@ -11,6 +11,13 @@ const input = ref(null);
 const time = ref(null);
 var backgroundAudio = null;
 
+var inputDate = new Date("2024-12-24");
+
+var todaysDate = new Date();
+
+const christmas = ref(inputDate.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0));
+
+
 function question() {
   return data.questions[i.value];
 }
@@ -19,7 +26,6 @@ function moveAway(answer) {
   window.scrollTo(0, 0);
 
   if (i.value == "start" && !backgroundAudio) {
-    console.log("started song");
     backgroundAudio = new Audio(song);
     backgroundAudio.play();
   }
@@ -35,7 +41,6 @@ function moveAway(answer) {
 
   rightAvatar.value = answer.rightAvatar;
   leftAvatar.value = answer.leftAvatar;
-  console.log(backgroundAudio);
 
   if (answer.next == "runaway") {
 
@@ -106,7 +111,8 @@ function moveAway(answer) {
 </script>
 
 <template>
-  <main>
+  <main v-if="christmas">
+
     <div class="container" v-if="question()">
       <div class="text">{{ question().question }}</div>
       <!--<div v-if="question().background"><img :src="question().background" width="370" ></div>-->
@@ -122,6 +128,11 @@ function moveAway(answer) {
       </div>
     </div>
     <div class="right-avatar" v-if="rightAvatar"><img :src="rightAvatar" /></div>
+  </main>
+  <main v-else>
+    <div class="container">
+      <div class="text">It's not yet christmas!</div>
+    </div>
   </main>
 </template>
 
