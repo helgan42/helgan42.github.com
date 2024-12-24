@@ -1,9 +1,10 @@
 @import './base.css';
 
 #app {
-  max-width: 400px;
   margin: 0 auto;
   font-weight: normal;
+  max-width: 400px;
+  width: 100%;
 }
 
 a,
@@ -27,7 +28,5 @@ a,
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
   }
 }

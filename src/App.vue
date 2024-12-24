@@ -16,6 +16,7 @@ function question() {
 }
 
 function moveAway(answer) {
+  window.scrollTo(0, 0);
 
   if (i.value == "start" && !backgroundAudio) {
     console.log("started song");
@@ -108,7 +109,7 @@ function moveAway(answer) {
   <main>
     <div class="container" v-if="question()">
       <div class="text">{{ question().question }}</div>
-      <div v-if="question().background"><img :src="question().background" width="370" ></div>
+      <!--<div v-if="question().background"><img :src="question().background" width="370" ></div>-->
 
       <div v-if="question().input">
         <input type="text" class="form-control" v-model="input">
@@ -146,8 +147,10 @@ function moveAway(answer) {
   width: 100%
 }
 .container {
+  padding-top: 100px;
   margin: 0 auto;
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
   text-align: center
 }
 header {
