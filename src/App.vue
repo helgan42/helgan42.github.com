@@ -147,7 +147,7 @@ function moveAway(answer) {
   width: 100%
 }
 .container {
-  padding-top: 100px;
+  padding-top: 10px;
   margin: 0 auto;
   max-width: 400px;
   width: 100%;
