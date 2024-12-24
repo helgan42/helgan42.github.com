@@ -11,7 +11,7 @@ const input = ref(null);
 const time = ref(null);
 var backgroundAudio = null;
 
-var inputDate = new Date("2024-12-24");
+var inputDate = new Date("2024-12-25");
 
 var todaysDate = new Date();
 
